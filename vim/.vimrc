@@ -9,6 +9,7 @@ set showmode
 set showcmd
 set visualbell
 set clipboard+=unnamed
+set notimeout
 
 "" -- Search improvements
 set ignorecase
@@ -17,23 +18,24 @@ set incsearch
 set hlsearch
 
 " Define Leader Key
-unmap <Space>
-let mapleader = " "
+nnoremap <space> <nop>
+let mapleader="\<Space>"
 
 " -- Third Party Plugins --
-" https://jb.gg/ideavim-plugins
-set surround
-set highlightedyank
-"set sneak
-set nerdtree
-set commentary
-set easymotion
-set notimeout
+" Supported by https://jb.gg/ideavim-plugins
+call plug#begin('~/.vim/plugged')
 
+Plug 'tpope/vim-surround'
+Plug 'machakann/vim-highlightedyank'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-commentary'
+Plug 'easymotion/vim-easymotion'
 Plug 'jeetsukumaran/vim-indentwise'
+Plug 'liuchengxu/vim-which-key'
+
+call plug#end()
 
 " Which-key settings
-set which-key
 let g:WhichKey_FontSize = 16
 let g:WhichKey_CommandColor = "#41ead4"
 let g:WhichKey_PrefixColor = "#f335b2"
@@ -112,6 +114,8 @@ vnoremap > >gv
 
 " Jump around with easymotion
 map <leader>j <Plug>(easymotion-s)
+map <leader>w <Plug>(easymotion-overwin-w)
+nmap s <Plug>(easymotion-overwin-f2)
 
 " Open NERDTree (use q to exit)
 map <leader>x :NERDTreeToggle<CR>
