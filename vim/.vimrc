@@ -9,7 +9,7 @@ set relativenumber
 set showmode
 set showcmd
 set visualbell
-set clipboard+=unnamed
+set clipboard+=unnamed " Use system clipboard
 set notimeout
 
 "" -- Search improvements
@@ -23,7 +23,7 @@ nnoremap <space> <nop>
 let mapleader="\<Space>"
 
 " -- Third Party Plugins --
-" Supported by https://jb.gg/ideavim-plugins
+" Some are supported by https://jb.gg/ideavim-plugins
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-surround'
@@ -60,7 +60,6 @@ let g:WhichKeyDesc_window_split_vertically = "<leader>wv Split vertically"
 let g:WhichKeyDesc_window_split_horizontally = "<leader>wh Split horizontally"
 let g:WhichKeyDesc_window_split_unsplit = "<leader>wu Unsplit"
 let g:WhichKeyDesc_window_split_move_editor = "<leader>wm Move editor to opposite tab group"
-
 
 let g:WhichKeyDesc_display = "<leader>d Display options"
 let g:WhichKeyDesc_zen_mode = "<leader>dz Toggle Zen mode"
